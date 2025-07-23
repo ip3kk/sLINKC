@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STARLINK COIN (SLNK) | Official Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="image/logo.png">
+  <script src="https://kit.fontawesome.com/2b8e2e6e2a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="google" content="notranslate">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-dark: #B8860B;
+      --gold-light: #FFF8DC;
+      --bg-dark: #0A0A0F;
+      --bg-darker: #1A1A2E;
+      --bg-card: rgba(26, 26, 46, 0.85);
+      --white: #fff;
+      --nav-height: 80px;
+      --glass: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, #2A2A4A 100%);
+      color: var(--gold);
+      min-height: 100vh;
+      overflow-x: hidden;
+      touch-action: manipulation;
+      overscroll-behavior: contain;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* 高级背景动画 */
+    .background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                  radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                  radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                  radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                  radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+      background-repeat: repeat;
+      background-size: 200px 100px;
+      animation: stars 20s linear infinite;
+    }
+    
+    @keyframes stars {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-100px); }
+    }
+    
+    .floating-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+    }
+    
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 0s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 1s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 2s; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(100vh) scale(0); opacity: 0; }
+      50% { transform: translateY(50vh) scale(1); opacity: 0.8; }
+    }
+    
+    /* NAVIGATION */
+    .navbar {
+      width: 100%;
+      height: var(--nav-height);
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6vw;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      max-width: 1400px;
+      margin: 0 auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .nav-logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px var(--gold);
+      background: var(--bg-darker);
+      border: 2px solid var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 20px var(--gold); }
+      50% { box-shadow: 0 0 30px var(--gold), 0 0 40px var(--gold-dark); }
+    }
+    
+    .nav-logo span {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .nav-link {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover {
+      color: var(--white);
+      text-shadow: 0 0 10px var(--gold);
+    }
+    
+    .nav-link:hover::before {
+      width: 80%;
+    }
+    
+    .nav-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--bg-dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      letter-spacing: 1.5px;
+      margin-left: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .nav-btn:hover::before {
+      left: 100%;
+    }
+    
+    .nav-btn:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--bg-darker);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      min-width: 180px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      z-index: 200;
+      right: 0;
+      top: 120%;
+      padding: 12px 0;
+      border: 1px solid var(--glass-border);
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: fadeInUp 0.3s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .dropdown-content a {
+      color: var(--gold);
+      padding: 14px 24px;
+      text-decoration: none;
+      display: block;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 0 8px;
+    }
+    
+    .dropdown-content a:hover {
+      background: var(--gold-dark);
+      color: var(--white);
+      transform: translateX(5px);
+    }
+    
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      margin-left: 20px;
+      margin-right: 16px;
+    }
+    
+    .bar {
+      width: 30px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: 0.3s;
+      box-shadow: 0 0 5px var(--gold);
+    }
+    
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 70vw;
+      height: 100vh;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      border-right: 1px solid var(--glass-border);
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    
+    .mobile-nav.open {
+      display: flex;
+      transform: translateX(0);
+    }
+    
+    .mobile-nav .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2.5rem;
+      color: var(--gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-nav .close:hover {
+      color: var(--white);
+      transform: scale(1.1);
+    }
+    
+    .mobile-nav a, .mobile-nav button {
+      color: var(--gold);
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0;
+      padding: 16px 0;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      width: 85vw;
+      max-width: 350px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .mobile-nav a:hover, .mobile-nav button:hover {
+      background: var(--gold-dark);
+      color: var(--white);
+      transform: translateX(10px);
+    }
+    
+    /* HERO */
+    .hero {
+      margin-top: var(--nav-height);
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    
+    .hero-bg video {
+      width: 100vw;
+      min-height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      filter: blur(1px) brightness(0.9) contrast(1.2);
+    }
+    
+    .hero-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 40px 40px 40px;
+      background: rgba(26, 26, 46, 0.7);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--glass-border);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .hero-title {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px var(--gold);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      from { text-shadow: 0 0 20px var(--gold); }
+      to { text-shadow: 0 0 30px var(--gold), 0 0 40px var(--gold-dark); }
+    }
+    
+    .hero-desc {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    
+    .hero-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--bg-dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 15px;
+      padding: 16px 0;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+      text-decoration: none;
+      letter-spacing: 2px;
+      width: 250px;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .hero-btn:hover::before {
+      left: 100%;
+    }
+    
+    .hero-btn:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--bg-darker);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* SECTIONS */
+    .section {
+      max-width: 1000px;
+      margin: 140px auto 0 auto;      /* 恢復原本的間距 */
+      padding: 60px 40px 70px 40px;   /* 恢復原本的 padding */
+      background: rgba(26, 26, 46, 0.8);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      color: var(--white);
+      position: relative;
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    
+    .section-title {
+      font-family: 'Orbitron', Arial, sans-serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 0 0 15px var(--gold);
+    }
+    
+    .section-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--white);
+      text-align: center;
+      opacity: 0.9;
+    }
+    
+    /* FAQ */
+    .faq {
+      text-align: left;
+      margin-top: 30px;
+    }
+    
+    .faq-item {
+      margin-bottom: 24px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .faq-q {
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .faq-a {
+      color: var(--white);
+      margin-left: 0;
+      opacity: 0.9;
+    }
+    
+    /* CONTACT & SOCIAL */
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .social {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    
+    .social a {
+      color: var(--gold);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+    }
+    
+    .social a:hover {
+      color: var(--white);
+      background: var(--gold-dark);
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .section {
+        max-width: 95vw;
+        padding: 40px 30px;
+      }
+    }
+    
+    @media (max-width: 800px) {
+      .hero-content {
+        max-width: 95vw;
+        padding: 40px 30px 30px 30px;
+      }
+      
+      .section {
+        margin: 60px auto 0 auto;
+        padding: 40px 20px 50px 20px;
+      }
+      
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+        z-index: 2002;
+      }
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100vw;
+        height: 44px;
+        background: transparent;
+        z-index: 3000;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        scrollbar-width: none; /* Firefox */
+      }
+      .mobile-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .mobile-nav.open {
+        display: flex !important;
+      }
+      .mobile-nav a, .mobile-nav button {
+        flex: none;
+        display: flex;
+        font-size: 13px;
+        padding: 0 8px;
+        margin: 0 2px;
+        border-radius: 0;
+        height: 36px;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        color: #FFD700;
+        white-space: nowrap;
+        border: none;
+        box-shadow: none;
+        letter-spacing: 0.1px;
+        text-align: center;
+        overflow: visible;
+      }
+      body.mobile-nav-open {
+        overflow: hidden;
+      }
+    }
+    .notranslate {
+      unicode-bidi: isolate;
+      -webkit-user-select: text;
+      -webkit-text-security: none;
+      text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      -webkit-locale: "en";
+    }
+    /* 優化語言切換按鈕樣式 */
+    .nav-btn#lang-toggle, .lang-btn-mobile {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--bg-dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 18px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 2px 10px rgba(255,215,0,0.18);
+      letter-spacing: 1.5px;
+      margin-left: 12px;
+      margin-right: 0;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-btn#lang-toggle:hover, .lang-btn-mobile:hover {
+      background: linear-gradient(90deg, var(--gold-light) 0%, var(--gold) 100%);
+      color: var(--bg-darker);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 18px rgba(255,215,0,0.28);
+    }
+    @media (max-width: 800px) {
+      .nav-btn#lang-toggle {
+        display: none;
+      }
+      .mobile-nav {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: auto;
+        height: 56px;
+        background: transparent;
+        z-index: 2002;
+        box-shadow: none;
+        border: none;
+        padding: 0 12px;
+      }
+      .lang-btn-mobile {
+        display: inline-flex;
+        margin-right: 8px;
+        font-size: 1rem;
+        padding: 8px 18px;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 高级背景动画 -->
+  <div class="background-animation">
+    <div class="stars"></div>
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="image/logo.png" alt="STARLINK COIN Logo">
+      <span>sLINK</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link" data-en="About" data-zh="关于我们">About</a>
+      <a href="#token" class="nav-link" data-en="Token" data-zh="代币信息">Token</a>
+      <a href="#private" class="nav-link" data-en="Private Sale" data-zh="私募详情">Private Sale</a>
+      <a href="#roadmap" class="nav-link" data-en="Roadmap" data-zh="路线图">Roadmap</a>
+      <a href="#faq" class="nav-link" data-en="FAQ" data-zh="常见问题">FAQ</a>
+      <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
+      <div class="dropdown">
+        <button class="nav-btn" id="subscribe-btn" data-en="ICO / Presale ▼" data-zh="ICO / 预售 ▼">ICO / Presale ▼</button>
+      </div>
+      <button class="nav-btn" id="lang-toggle" style="margin-left: 20px; font-size: 0.9rem; padding: 8px 16px;">EN/中文</button>
+    </div>
+  </nav>
+  <!-- 移除所有可疑遮擋logo元素，確保logo唔會再被遮住 -->
+
+  <section class="hero">
+    <div class="hero-bg">
+      <video src="video/7778.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="hero-content">
+      <div class="hero-title">STARLINK COIN (<span class="notranslate">sLINK</span>)</div>
+      <div class="hero-desc" data-en="The next-generation TON token inspired by the vision of Starlink and Elon Musk. Join the private sale and be part of the future of decentralized connectivity." data-zh="受Starlink和Elon Musk愿景启发的下一代TON代币。加入私募，成为去中心化连接未来的参与者。">The next-generation TON token inspired by the vision of Starlink and Elon Musk. Join the private sale and be part of the future of decentralized connectivity.</div>
+      <button class="hero-btn" id="heroSubscribeBtn" data-en="Pre-order Now" data-zh="立即预订">Pre-order Now</button>
+    </div>
+  </section>
+  
+  <section class="section" id="about">
+    <div class="section-title" data-en="About Us" data-zh="关于我们">About Us</div>
+    <div class="section-content" data-en="STARLINK COIN (sLINK) is a TON-based token designed to revolutionize decentralized connectivity, inspired by the Starlink project and the innovative spirit of Elon Musk. Our mission is to empower global users with secure, fast, and borderless transactions." data-zh="STARLINK COIN (sLINK) 是基于TON的代币，旨在革新去中心化连接，受Starlink项目和Elon Musk创新精神的启发。我们的使命是为全球用户提供安全、快速和无国界的交易。">STARLINK COIN (<span class="notranslate">sLINK</span>) is a TON-based token designed to revolutionize decentralized connectivity, inspired by the Starlink project and the innovative spirit of Elon Musk. Our mission is to empower global users with secure, fast, and borderless transactions.</div>
+  </section>
+  
+  <section class="section" id="token">
+    <div class="section-title" data-en="Token Information" data-zh="代币信息">Token Information</div>
+    <div class="section-content" data-en="Symbol: sLINK | Network: TON <br> Total Supply: 8,000,000 <br> Decimals: 9 <br> Contract: Blockchain Explorer<br>Mintable: true" data-zh="代币符号: sLINK | 网络: TON <br> 总供应量: 8,000,000 <br> 小数位数: 9 <br> 合约: 区块链浏览器<br>可铸造: 是">Symbol: <b><span class="notranslate">sLINK</span></b> &nbsp;|&nbsp; Network: <b>TON</b> <br> Total Supply: <b>8,000,000</b> <br> Decimals: <b>9</b> <br> Contract: <a href="#" id="blockchain-link" style="color:var(--gold-dark);text-decoration:underline;">Blockchain Explorer</a><br>Mintable: <b>true</b></div>
+  </section>
+  
+  <section class="section" id="private">
+    <div class="section-title" data-en="Private Sale Details" data-zh="私募详情">Private Sale Details</div>
+    <div class="section-content" data-en="Participate in our exclusive private sale. Limited allocation, priority for early supporters. Enter your code to subscribe and secure your allocation." data-zh="参与我们的独家私募。有限配额，早期支持者优先。输入您的代码进行订阅并确保您的配额。">Participate in our exclusive private sale. Limited allocation, priority for early supporters. Enter your code to subscribe and secure your allocation.</div>
+    <div class="section-content" style="margin-top:20px;font-size:1.1rem;color:var(--gold);background:rgba(255,215,0,0.1);border-radius:12px;padding:15px;border:1px solid var(--gold-dark);" data-en="<strong>Pre-order Price:</strong> 1 sLINK = 0.129 USDT" data-zh="<strong>预订价格:</strong> 1 sLINK = 0.129 USDT">
+      <strong>Pre-order Price:</strong> 1 <span class="notranslate">sLINK</span> = 0.129 USDT
+    </div>
+    <div class="section-content" style="margin-top:15px;font-size:1.08em;color:#FFD700;" data-en="We accept USDT and USDC from any blockchain network, but <strong>please make sure you have a TON wallet to receive sLINK COIN</strong>. We recommend using Tonkeeper or MyTonWallet." data-zh="我们接受来自任何区块链网络的USDT和USDC，但<strong>请确保您有TON钱包来接收sLINK代币</strong>。我们推荐使用Tonkeeper或MyTonWallet。">
+      We accept USDT and USDC from any blockchain network, but <strong>please make sure you have a TON wallet to receive sLINK COIN</strong>. We recommend using
+      <a href="https://tonkeeper.com/" target="_blank" rel="noopener" style="color:#00bfff;text-decoration:underline;">Tonkeeper</a>
+      or
+      <a href="https://mytonwallet.io/" target="_blank" rel="noopener" style="color:#00bfff;text-decoration:underline;">MyTonWallet</a>
+      .
+    </div>
+  </section>
+  
+  <section class="section" id="roadmap">
+    <div class="section-title" data-en="Roadmap" data-zh="路线图">Roadmap</div>
+    <div class="section-content" data-en="Q4 2025: Launch & Private Sale<br>Q3 2026: DEX Listing, Staking, Community Growth<br>2026: Ecosystem Expansion, Partnerships<br>2027: Global Adoption & Utility Expansion" data-zh="2025年第四季度: 启动和私募<br>2026年第三季度: DEX上市、质押、社区增长<br>2026年: 生态系统扩展、合作伙伴关系<br>2027年: 全球采用和实用性扩展">Q4 2025: Launch & Private Sale<br>Q3 2026: DEX Listing, Staking, Community Growth<br>2026: Ecosystem Expansion, Partnerships<br>2027: Global Adoption & Utility Expansion</div>
+  </section>
+  
+  <section class="section" id="faq">
+    <div class="section-title" data-en="FAQ" data-zh="常见问题">FAQ</div>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q" data-en="What is STARLINK COIN (sLINK)?" data-zh="什么是STARLINK COIN (sLINK)？">What is STARLINK COIN (<span class="notranslate">sLINK</span>)?</div>
+        <div class="faq-a" data-en="A next-gen TON token inspired by Starlink and Elon Musk, focused on decentralized connectivity." data-zh="受Starlink和Elon Musk启发的下一代TON代币，专注于去中心化连接。">A next-gen TON token inspired by Starlink and Elon Musk, focused on decentralized connectivity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-en="How to join the private sale?" data-zh="如何参与私募？">How to join the private sale?</div>
+        <div class="faq-a" data-en="Click 'Subscribe Now', enter your code, and submit your desired allocation." data-zh="点击'立即预订'，输入您的代码，并提交您想要的配额。">Click "Subscribe Now", enter your code, and submit your desired allocation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-en="What is the pre-order price?" data-zh="预订价格是多少？">What is the pre-order price?</div>
+        <div class="faq-a" data-en="The pre-order price is 1 sLINK = 0.129 USDT." data-zh="预订价格是1 sLINK = 0.129 USDT。">The pre-order price is 1 <span class="notranslate">sLINK</span> = 0.129 USDT.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-en="Is there a minimum/maximum allocation?" data-zh="是否有最低/最高配额限制？">Is there a minimum/maximum allocation?</div>
+        <div class="faq-a" data-en="Yes, the minimum is 1000 sLINK, maximum is 200,000 sLINK per user (Special VIP exceptions apply)." data-zh="是的，最低1000 sLINK，每个用户最高200,000 sLINK（特殊VIP例外）。">Yes, the minimum is 1000 <span class="notranslate">sLINK</span>, maximum is 200,000 <span class="notranslate">sLINK</span> per user (Special VIP exceptions apply).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-en="How will I be contacted?" data-zh="我将如何被联系？">How will I be contacted?</div>
+        <div class="faq-a" data-en="After subscription, please provide your email address and select your preferred contact language. Our team will contact you in your chosen language within 24 hours." data-zh="订阅后，请提供您的电子邮件地址并选择您偏好的联系语言。我们的团队将在24小时内用您选择的语言联系您。">After subscription, please provide your email address and select your preferred contact language. Our team will contact you in your chosen language within 24 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-en="When will I be contacted after subscription?" data-zh="订阅后多久会被联系？">When will I be contacted after subscription?</div>
+        <div class="faq-a" data-en="Our team will contact you within 24 hours after your successful subscription." data-zh="我们的团队将在您成功订阅后24小时内联系您。">Our team will contact you within 24 hours after your successful subscription.</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 保留主體內容和Google表單 -->
+<section class="section" id="preorder">
+  <div class="section-title" data-en="Pre-order STARLINK COIN" data-zh="预订STARLINK COIN">Pre-order STARLINK COIN</div>
+  <div id="preorder-password-box" style="max-width:400px;margin:0 auto 18px auto;display:flex;flex-direction:column;gap:12px;">
+    <input type="password" id="preorder-password" placeholder="Enter password to access the form" data-en-placeholder="Enter password to access the form" data-zh-placeholder="输入密码访问表单" style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+    <button id="preorder-password-btn" style="background:linear-gradient(135deg,#FFD700,#B8860B);color:#0A0A0F;font-weight:700;border:none;border-radius:12px;padding:10px 0;font-size:1.1rem;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(255,215,0,0.3);letter-spacing:1.5px;" data-en="Unlock Form" data-zh="解锁表单">Unlock Form</button>
+    <div id="preorder-password-error" style="color:#ff4d4f;font-size:1rem;height:20px;"></div>
+  </div>
+  <div id="preorder-form-wrapper" style="display:none;">
+    <form id="myForm" style="max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:18px;">
+      <input type="text" id="fullName" placeholder="Enter your full name" data-en-placeholder="Enter your full name" data-zh-placeholder="输入您的全名" required style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+      <input type="text" id="amount" placeholder="Enter amount (e.g. 5000, 10000, 50000)" data-en-placeholder="Enter amount (e.g. 5000, 10000, 50000)" data-zh-placeholder="输入数量 (例如: 5000, 10000, 50000)" required style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+      <input type="email" id="email" placeholder="Enter email address" data-en-placeholder="Enter email address" data-zh-placeholder="输入电子邮件地址" required style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+      <input type="text" id="telegram" placeholder="Enter Telegram username (optional)" data-en-placeholder="Enter Telegram username (optional)" data-zh-placeholder="输入Telegram用户名 (可选)" style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+      <input type="text" id="walletAddress" placeholder="Enter your TON wallet address" data-en-placeholder="Enter your TON wallet address" data-zh-placeholder="输入您的TON钱包地址" required style="padding:12px;border-radius:8px;border:1px solid #FFD700;font-size:1.1rem;">
+      <button type="submit" style="background:linear-gradient(135deg,#FFD700,#B8860B);color:#0A0A0F;font-weight:700;border:none;border-radius:12px;padding:14px 0;font-size:1.1rem;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(255,215,0,0.3);letter-spacing:1.5px;" data-en="Submit Pre-order" data-zh="提交预订">Submit Pre-order</button>
+    </form>
+    <div id="result" style="margin-top:18px;text-align:center;font-size:1.1rem;color:#FFD700;"></div>
+  </div>
+</section>
+<script>
+document.getElementById('myForm').onsubmit = function(e) {
+  e.preventDefault();
+  var amount = document.getElementById('amount').value;
+  var email = document.getElementById('email').value;
+  var telegram = document.getElementById('telegram').value;
+  var walletAddress = document.getElementById('walletAddress').value;
+  var fullName = document.getElementById('fullName').value;
+  
+  // More flexible validation
+  if (!amount || amount.trim() === '') {
+    document.getElementById('result').innerText = 'Please enter the amount';
+    return;
+  }
+  
+  // Allow numeric or text format for amount
+  var amountNum = parseFloat(amount);
+  if (isNaN(amountNum) || amountNum <= 0) {
+    document.getElementById('result').innerText = 'Please enter a valid amount';
+    return;
+  }
+  
+  if (!email || email.trim() === '') {
+    document.getElementById('result').innerText = 'Please enter your email address';
+    return;
+  }
+  
+  // Simple email format check
+  if (!email.includes('@') || !email.includes('.')) {
+    document.getElementById('result').innerText = 'Please enter a valid email address';
+    return;
+  }
+  
+  if (!walletAddress || walletAddress.trim() === '') {
+    document.getElementById('result').innerText = 'Please enter your TON wallet address';
+    return;
+  }
+  
+  if (!fullName || fullName.trim() === '') {
+    document.getElementById('result').innerText = 'Please enter your full name';
+    return;
+  }
+  
+  // Show loading status
+  document.getElementById('result').innerText = 'Submitting...';
+  
+  // Call backend API
+  fetch('https://slnk-669.vercel.app/api/submit-order', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      amount: amount,
+      email: email,
+      telegram: telegram,
+      walletAddress: walletAddress,
+      fullName: fullName
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('result').innerText = data.message;
+      document.getElementById('myForm').reset();
+    } else {
+      document.getElementById('result').innerText = data.message || 'Submission failed, please try again later';
+    }
+  })
+  .catch(error => {
+    console.error('Submission failed:', error);
+    document.getElementById('result').innerText = 'Submission failed, please try again later';
+  });
+};
+</script>
+
+  <section class="section contact" id="contact">
+    <div class="section-title" data-en="Contact Us" data-zh="联系我们">Contact Us</div>
+    <div class="section-content" data-en="For partnership or support, email us at starlinkslnk@gmail.com" data-zh="如需合作或支持，请发送邮件至 starlinkslnk@gmail.com">For partnership or support, email us at <a href="mailto:starlinkslnk@gmail.com" style="color:var(--gold)">starlinkslnk@gmail.com</a></div>
+    <div class="social">
+      <a href="https://t.me/sLINK888" title="Telegram" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://x.com/coinslink808?s=21" title="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+  
+  <!-- 移除彈出式Google表單和相關模態框 -->
+  <script src="main.js"></script>
+  <script>
+    // 關閉區塊鏈模態框的函數
+    function closeBlockchainModal() {
+      var modal = document.getElementById('blockchain-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        // 關閉後滾動回主頁頂部
+        setTimeout(function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+    
+    // sLINK全站自動防翻譯（不影響已經包好的）
+    document.addEventListener('DOMContentLoaded', function() {
+      function wrapSLINK(node) {
+        if (node.nodeType === 3) { // 純文字節點
+          // 僅替換獨立的sLINK，不影響已包span的
+          var replaced = node.nodeValue.replace(/\bsLINK\b/g, function(match) {
+            return '<span class="notranslate">sLINK</span>';
+          });
+          if (replaced !== node.nodeValue) {
+            var temp = document.createElement('span');
+            temp.innerHTML = replaced;
+            while (temp.firstChild) {
+              node.parentNode.insertBefore(temp.firstChild, node);
+            }
+            node.parentNode.removeChild(node);
+          }
+        } else if (node.nodeType === 1 && node.childNodes && !node.classList.contains('notranslate')) {
+          for (var i = node.childNodes.length - 1; i >= 0; i--) {
+            wrapSLINK(node.childNodes[i]);
+          }
+        }
+      }
+      wrapSLINK(document.body);
+    });
+    
+    // 修复导航点击后的滚动定位
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            // 获取导航栏高度
+            var navBar = document.querySelector('.navbar');
+            var navHeight = navBar ? navBar.offsetHeight : 80;
+            
+            // 计算目标元素的位置
+            var targetRect = target.getBoundingClientRect();
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var targetTop = targetRect.top + scrollTop;
+            
+            // 计算滚动位置：目标元素顶部 - 导航栏高度 - 额外间距
+            var scrollTo = targetTop - navHeight - 20; // 20px 额外间距
+            
+            // 确保不会滚动到负值
+            if (scrollTo < 0) scrollTo = 0;
+            
+            // 平滑滚动到目标位置
+            window.scrollTo({ 
+              top: scrollTo, 
+              behavior: 'smooth' 
+            });
+          }
+        }
+      });
+    });
+    
+    // 为下拉菜单中的链接也添加相同的功能
+    document.querySelectorAll('.dropdown-content a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          var target = document.querySelector(href);
+          if (target) {
+            var navBar = document.querySelector('.navbar');
+            var navHeight = navBar ? navBar.offsetHeight : 80;
+            var targetRect = target.getBoundingClientRect();
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var targetTop = targetRect.top + scrollTop;
+            var scrollTo = targetTop - navHeight - 20;
+            if (scrollTo < 0) scrollTo = 0;
+            window.scrollTo({ 
+              top: scrollTo, 
+              behavior: 'smooth' 
+            });
+          }
+        }
+      });
+    });
+    
+    // 將訂閱按鈕直接跳轉到預購表單區塊
+    document.getElementById('subscribe-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      var preorder = document.getElementById('preorder');
+      if (preorder) {
+        preorder.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    document.getElementById('heroSubscribeBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      var preorder = document.getElementById('preorder');
+      if (preorder) {
+        preorder.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    
+    // 移除與Google表單相關的JS和模態框邏輯
+    document.getElementById('preorder-password-btn').onclick = function() {
+      var pwd = document.getElementById('preorder-password').value.trim();
+      var errorDiv = document.getElementById('preorder-password-error');
+      
+      // 支援多個密碼
+      var validPasswords = ['8089971', '8889971', '9971808', '9971888'];
+      
+      if (validPasswords.includes(pwd)) {
+        document.getElementById('preorder-password-box').style.display = 'none';
+        // 顯示靚靚金色按鈕，連去Telegram表單
+        document.getElementById('preorder-form-wrapper').innerHTML = `
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 0;">
+            <a href="https://t.me/InstantFormsBot/form?startapp=9f7645c2-ca21-48fc-a814-ba8e8526c78f" target="_blank" style="
+              display:inline-block;
+              background:linear-gradient(135deg,#FFD700,#B8860B);
+              color:#0A0A0F;
+              font-weight:700;
+              border:none;
+              border-radius:18px;
+              padding:22px 48px;
+              font-size:1.35rem;
+              cursor:pointer;
+              transition:all 0.3s ease;
+              box-shadow:0 8px 32px rgba(255,215,0,0.25);
+              letter-spacing:2px;
+              text-decoration:none;
+              margin-top:10px;
+              margin-bottom:10px;
+              text-align:center;
+              text-shadow:0 2px 8px #B8860B;
+            ">
+              點擊此處預訂（Telegram表單）<br>Pre-order (Telegram Form)
+            </a>
+            <div style="margin-top:18px;font-size:1.08rem;color:#FFD700;text-align:center;max-width:400px;">
+              請點擊上面金色按鈕，進入Telegram表單完成預訂。<br>
+              Please click the gold button above to open the Telegram form and complete your pre-order.
+            </div>
+          </div>
+        `;
+        document.getElementById('preorder-form-wrapper').style.display = 'block';
+        errorDiv.innerText = '';
+      } else {
+        errorDiv.innerText = 'Incorrect password. Please try again.';
+      }
+    };
+    // 區塊鏈瀏覽器鏈接點擊事件
+    var blockchainLink = document.getElementById('blockchain-link');
+    if (blockchainLink) {
+      blockchainLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('blockchain-modal').style.display = 'block';
+    });
+    }
+    // 點擊背景關閉
+    var blockchainModal = document.getElementById('blockchain-modal');
+    if (blockchainModal) {
+      blockchainModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeBlockchainModal();
+        }
+      });
+    }
+    
+    // 语言切换功能
+    let currentLang = 'en';
+    
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'zh' : 'en';
+      updateLanguage();
+    }
+    
+    function updateLanguage() {
+      // 更新所有带有data-en和data-zh属性的元素
+      const elements = document.querySelectorAll('[data-en][data-zh]');
+      elements.forEach(element => {
+        if (currentLang === 'zh') {
+          element.innerHTML = element.getAttribute('data-zh');
+        } else {
+          element.innerHTML = element.getAttribute('data-en');
+        }
+      });
+      
+      // 更新placeholder
+      const inputs = document.querySelectorAll('[data-en-placeholder][data-zh-placeholder]');
+      inputs.forEach(input => {
+        if (currentLang === 'zh') {
+          input.placeholder = input.getAttribute('data-zh-placeholder');
+        } else {
+          input.placeholder = input.getAttribute('data-en-placeholder');
+        }
+      });
+      
+      // 更新语言切换按钮文本
+      const langToggle = document.getElementById('lang-toggle');
+      if (langToggle) {
+        langToggle.textContent = currentLang === 'en' ? 'EN/中文' : 'EN/中文';
+      }
+      const langToggleMobile = document.getElementById('lang-toggle-mobile');
+      if (langToggleMobile) {
+        langToggleMobile.textContent = currentLang === 'en' ? 'EN/中文' : 'EN/中文';
+      }
+    }
+    
+    // 绑定语言切换按钮事件
+    document.addEventListener('DOMContentLoaded', function() {
+      const langToggle = document.getElementById('lang-toggle');
+      if (langToggle) {
+        langToggle.addEventListener('click', toggleLanguage);
+      }
+      const langToggleMobile = document.getElementById('lang-toggle-mobile');
+      if (langToggleMobile) {
+        langToggleMobile.addEventListener('click', toggleLanguage);
+      }
+      // 頁面加載時自動套用英文
+      updateLanguage();
+    });
+  </script>
+  <!-- 恢復區塊鏈瀏覽器模態框 -->
+<div id="blockchain-modal" style="display:none;position:fixed;z-index:2100;top:0;left:0;width:100vw;height:100vh;background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);">
+  <div style="position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+    <!-- 關閉按鈕 -->
+    <span id="closeBlockchain" onclick="closeBlockchainModal()" style="position:absolute;top:30px;right:30px;font-size:2rem;color:var(--gold);cursor:pointer;transition:all 0.3s ease;z-index:2200;">&times;</span>
+    <!-- 標題 -->
+    <div style="font-family:'Orbitron',Arial,sans-serif;font-size:2rem;color:var(--gold);margin-bottom:30px;text-align:center;letter-spacing:2px;text-shadow:0 0 15px var(--gold);">
+      Blockchain Explorer
+    </div>
+    <!-- 圖片容器 -->
+    <div style="max-width:90vw;max-height:70vh;overflow:auto;border-radius:15px;box-shadow:0 20px 60px rgba(0,0,0,0.4);background:rgba(26,26,46,0.8);padding:20px;border:1px solid var(--glass-border);">
+      <img src="image/777.png" alt="Blockchain Explorer" style="max-width:100%;height:auto;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+    </div>
+  </div>
+</div>
+</body>
+</html> 

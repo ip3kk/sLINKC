@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Explorer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #181A20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      width: 54px;
+      height: 54px;
+      background: rgba(30,30,50,0.35);
+      border: 2.5px solid #FFD700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px #FFD70055, 0 2px 12px #0008, 0 0 0 6px rgba(255,255,255,0.08) inset;
+      cursor: pointer;
+      z-index: 10;
+      outline: none;
+      transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.18s;
+      padding: 0;
+      backdrop-filter: blur(8px) saturate(1.2);
+      animation: btnPop 0.7s cubic-bezier(.23,1.12,.62,1.01);
+    }
+    @keyframes btnPop {
+      0% { transform: scale(0.7); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .back-btn:hover {
+      background: rgba(255,215,0,0.18);
+      border-color: #fff;
+      box-shadow: 0 8px 32px #FFD70099, 0 2px 12px #0008, 0 0 0 10px rgba(255,255,255,0.13) inset;
+      transform: scale(1.09) translateY(-2px);
+    }
+    .back-btn svg {
+      width: 30px;
+      height: 30px;
+      display: block;
+      fill: url(#arrow-gradient);
+      filter: drop-shadow(0 2px 6px #FFD70088);
+      transition: filter 0.2s, fill 0.2s;
+    }
+    .back-btn:hover svg {
+      filter: drop-shadow(0 4px 16px #FFD700cc);
+      fill: url(#arrow-gradient-hover);
+    }
+    @media (max-width: 600px) {
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+      }
+      .back-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      img {
+        max-width: 99vw;
+        max-height: 60vh;
+      }
+    }
+    .img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    img {
+      max-width: 95vw;
+      max-height: 85vh;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #0008;
+      background: #23272F;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="window.location.href='../index.html'" title="Back">
+    <svg viewBox="0 0 32 32">
+      <defs>
+        <linearGradient id="arrow-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#FFD700"/>
+          <stop offset="100%" stop-color="#FFF8DC"/>
+        </linearGradient>
+        <linearGradient id="arrow-gradient-hover" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#fff"/>
+          <stop offset="100%" stop-color="#FFD700"/>
+        </linearGradient>
+      </defs>
+      <path d="M20.5 27a1.5 1.5 0 0 1-1.06-.44l-8-8a1.5 1.5 0 0 1 0-2.12l8-8A1.5 1.5 0 1 1 21.56 10.56L15.12 17l6.44 6.44A1.5 1.5 0 0 1 20.5 27z"/>
+    </svg>
+  </button>
+  <div class="img-wrap">
+    <img src="777.png" alt="Contract Image">
+  </div>
+</body>
+</html> 
