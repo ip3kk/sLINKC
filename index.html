@@ -643,6 +643,29 @@
         display: flex;
         z-index: 2002;
       }
+      /* 手機版語言切換按鈕 */
+      .mobile-lang-btn {
+        display: inline-flex;
+        background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        color: var(--bg-dark);
+        font-weight: 700;
+        border: none;
+        border-radius: 16px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(255,215,0,0.2);
+        letter-spacing: 1px;
+        margin-right: 12px;
+        text-decoration: none;
+      }
+      .mobile-lang-btn:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+        color: var(--bg-darker);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+      }
       .mobile-nav {
         display: none;
         position: absolute;
@@ -792,6 +815,8 @@
       </div>
       <button class="nav-btn" id="lang-toggle" style="margin-left: 20px; font-size: 0.9rem; padding: 8px 16px;">EN/中文</button>
     </div>
+    <!-- 手機版語言切換按鈕 -->
+    <button class="mobile-lang-btn" id="lang-toggle-mobile" data-en="EN/中文" data-zh="EN/中文">EN/中文</button>
   </nav>
   <!-- 移除所有可疑遮擋logo元素，確保logo唔會再被遮住 -->
 
